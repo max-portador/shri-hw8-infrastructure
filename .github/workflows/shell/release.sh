@@ -3,8 +3,9 @@
 export CURRENT_TAG=$(git tag | tail -1 | head -n1)
 PREV_TAG=$(git tag | tail -2 | head -n1)
 export CURRENT_TAG_AUTHOR=$(git show "$CURRENT_TAG" --pretty=format:"%an" --no-patch)
+
 export CURRENT_TAG_DATE=$(git show "$CURRENT_TAG" --pretty=format:"%ar" --no-patch)
-CHANGELOG=$(git log "$PREV_TAG".. --pretty=format:"%h - %s (%an, %ar)\n" | tr -s "\n" " ")
+CHANGELOG=$(git log "$PREV_TAG".. --pretty=format:"%h - %s (%an, %ar)\n" | tr -s" ")
 
 export HOST="https://api.tracker.yandex.net"
 export TOKEN="AQAAAAAC1VeLAAd4_gC07TbFXUOOisZhlAqEIhI"
@@ -14,7 +15,7 @@ export UNIQUE_VALUE="portador"
 
 export REQUEST_BODY'{
   "queue": "'$QUEUE_NAME'",
-  "summary": "'"$CURRENT_TAG"'| Author: '"$CURRENT_TAG_AUTHOR"' | released '"$CURRENT_TAG_DATE"')",
+  "summary": "'"$CURRENT_TAG"'| Author: '"$CURRENT_TAG_AUTHOR"' | released '"$CURRENT_TAG_DATE"'",
   "description": "'"$CHANGELOG"'",
   "unique": "'"$UNIQUE_VALUE"'_'"$CURRENT_TAG"'"
 }'
@@ -25,6 +26,7 @@ export REQUEST_BODY'{
 
 chmod +x ./.github/workflows/shell/add_task_in_tracker.sh
 ./.github/workflows/shell/add_task_in_tracker.sh
+
 
 if [ $? != 0 ]; then
   exit $?
