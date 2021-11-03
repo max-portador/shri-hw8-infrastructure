@@ -10,6 +10,7 @@ CHANGELOG=$(git log "$PREV_TAG" --pretty=format:"%h - %s (%an, %ar)\n" | tr -s "
 export HOST="https://api.tracker.yandex.net"
 export TOKEN="$1"
 export ORGANIZATION_ID="$2"
+echo "got secrets"
 export QUEUE_NAME="TMP"
 export UNIQUE_VALUE="portador"
 
