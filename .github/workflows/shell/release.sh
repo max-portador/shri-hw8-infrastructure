@@ -8,8 +8,8 @@ export CURRENT_TAG_DATE=$(git show "$CURRENT_TAG" --pretty="format:%ar" --no-pat
 CHANGELOG=$(git log "$PREV_TAG" --pretty=format:"%h - %s (%an, %ar)\n" | tr -s "\n" " ")
 
 export HOST="https://api.tracker.yandex.net"
-export TOKEN="AQAAAAAC1VeLAAd4_gC07TbFXUOOisZhlAqEIhI"
-export ORGANIZATION_ID="6461097"
+export TOKEN="$1"
+export ORGANIZATION_ID="$2"
 export QUEUE_NAME="TMP"
 export UNIQUE_VALUE="portador"
 
