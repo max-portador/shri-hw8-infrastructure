@@ -21,8 +21,8 @@ if [ "$ADD_TASK_RESPONSE" = "409" ]; then
 #------------------------------------------------------------------------
 # Обновляем задачу в Яндекс Трекер, если статус в ответе 409
 #------------------------------------------------------------------------
-  chmod +x ./.github/workflows/sh/udate_task_in_tracker.sh
-  ./.github/workflows/sh/udate_task_in_tracker.sh
+  chmod +x ./.github/workflows/shell/udate_task_in_tracker.sh
+  ./.github/workflows/shell/udate_task_in_tracker.sh
 
   if [ $? != 0 ]; then
     exit $?

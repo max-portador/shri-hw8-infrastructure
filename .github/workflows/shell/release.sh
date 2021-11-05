@@ -37,8 +37,8 @@ fi
 # Тесты
 #----------------------------------------
 
-chmod +x ./.github/workflows/sh/tests.sh
-./.github/workflows/sh/tests.sh
+chmod +x ./.github/workflows/shell/tests.sh
+./.github/workflows/shell/tests.sh
 
 if [ $? != 0 ]; then
   exit $?
@@ -47,8 +47,8 @@ fi
 #----------------------------------------
 # Артефакт
 #----------------------------------------
-chmod +x ./.github/workflows/sh/artifact.sh
-./.github/workflows/sh/artifact.sh
+chmod +x ./.github/workflows/shell/artifact.sh
+./.github/workflows/shell/artifact.sh
 
 if [ $? != 0 ]; then
   exit $?
