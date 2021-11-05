@@ -2,6 +2,7 @@
 
 docker build -t shri-hw8-infrastructure:"$CURRENT_TAG" .
 
+docker images
 if [ $? != 0 ]; then
   exit $?
 fi
