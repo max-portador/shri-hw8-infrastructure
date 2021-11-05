@@ -37,8 +37,8 @@ fi
 # Тесты
 #----------------------------------------
 
-chmod +x ./.github/workflows/shell/tests.sh
-./.github/workflows/shell/tests.sh
+chmod +x ./.github/workflows/shell/test.sh
+./.github/workflows/shell/test.sh
 
 if [ $? != 0 ]; then
   exit $?
